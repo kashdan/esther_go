@@ -19,5 +19,5 @@ func main() {
     web.Get("/(.*)", hello)
     web.Get("/adam(.*)", adam)
     web.SetLogger(logger)
-    web.Run("0.0.0.0:9999")
+    web.Run("0.0.0.0:56148")
 }
