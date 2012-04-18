@@ -1,2 +1,2 @@
 go get github.com/hoisie/web
-go install
+go run app.go
