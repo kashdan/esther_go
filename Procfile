@@ -1,1 +1,1 @@
-web: go run esther_go/app.go
+web: app
