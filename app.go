@@ -1,23 +1,20 @@
 package main
 
 import (
-    "github.com/hoisie/web"
+    "fmt"
     "log"
+    "net/http"
     "os"
 )
 
-func hello(val string) string { return "hello " + val }
-func adam(val string) string { return "adam " + val } 
-
 func main() {
-    f, err := os.Create("server.log")
+    http.HandleFunc("/", hello)
+    err := http.ListenAndServe(":"+os.Getenv("PORT"), nil)
     if err != nil {
-      // println(err.String())
-      //      return
+        log.Fatal("ListenAndServe:", err)
     }
-    logger := log.New(f, "", log.Ldate|log.Ltime)
-    web.Get("/(.*)", hello)
-    web.Get("/adam(.*)", adam)
-    web.SetLogger(logger)
-    web.Run("0.0.0.0:56148")
+}
+
+func hello(w http.ResponseWriter, req *http.Request) {
+    fmt.Fprintln(w, "hello, esther!")
 }
