@@ -1,2 +1,4 @@
-.godir
-.go
+esther_go
+=========
+
+http://esthergo.herokuapp.com/goodbye

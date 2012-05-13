@@ -1,23 +1,3 @@
-// package main
-// 
-// import (
-//     "fmt"
-//     "log"
-//     "net/http"
-//     "os"
-// )
-// 
-// func main() {
-//     http.HandleFunc("/", hello)
-//     err := http.ListenAndServe(":"+os.Getenv("PORT"), nil)
-//     if err != nil {
-//         log.Fatal("ListenAndServe:", err)
-//     }
-// }
-// 
-// func hello(w http.ResponseWriter, req *http.Request) {
-//     fmt.Fprintln(w, "hello, esther!")
-// }
 package main
 
 import (
@@ -27,12 +7,12 @@ import (
 
 // Our default handler
 func Hello(env mango.Env) (mango.Status, mango.Headers, mango.Body) {
-	return 200, mango.Headers{}, mango.Body("Hello Esther!")
+	return 200, mango.Headers{}, mango.Body("<b>Hi Esther!</b>")
 }
 
 // Our handler for /goodbye
 func Goodbye(env mango.Env) (mango.Status, mango.Headers, mango.Body) {
-	return 200, mango.Headers{}, mango.Body("Goodbye Esther!")
+	return 200, mango.Headers{}, mango.Body("<b>Goodbye Esther!</b>")
 }
 
 func main() {
