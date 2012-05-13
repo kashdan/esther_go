@@ -1,1 +1,1 @@
-web: hello
+web: app.go
